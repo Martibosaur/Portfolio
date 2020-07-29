@@ -41,11 +41,11 @@ const Navbar = () => {
             </NavLink>
             <NavLink
               exact
-              to="/about"
+              to="/apps/qr-code-generator"
               className="nav-item nav-link"
               activeClassName="active"
             >
-              About
+              QRCode Generator
             </NavLink>
           </div>
           <div className="navbar-nav ml-auto user-login">

@@ -2,7 +2,7 @@ import React from "react";
 import { ReactComponent as Astronaut } from "../assets/images/astronaut.svg";
 import { ReactComponent as Planet } from "../assets/images/planet.svg";
 import Projects from "../components/projects/Projects";
-import "../assets/styles/home.scss";
+import "./Home.scss";
 
 const Home = () => {
   return (
