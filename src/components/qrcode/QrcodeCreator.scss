@@ -1,4 +1,38 @@
 .qrCodeCreated {
   padding: 1rem;
-  border: 2px dashed #00caaf;
+  border: 2px dashed black;
+  background-color: #00caaf;
+}
+
+form {
+  .modal-body {
+    textarea {
+      width: 100%;
+      min-height: 200px;
+    }
+  }
+}
+
+.btn-addItem {
+  &:hover {
+    i {
+      color: rgb(0, 255, 13);
+    }
+  }
+  i {
+    font-size: 1.2rem;
+    color: white;
+  }
+}
+
+.btn-delete {
+  &:hover {
+    i {
+      color: red;
+    }
+  }
+  i {
+    font-size: 1.2rem;
+    color: white;
+  }
 }

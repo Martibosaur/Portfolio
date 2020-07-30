@@ -6,11 +6,12 @@ import { ReactComponent as Logo } from "../../assets/images/docker.svg";
 
 const Navbar = () => {
   // eslint-disable-next-line
-  const [user, setUser] = useState({
-    id: 1,
-    username: "Martibo",
-    email: "martibo@gmail.com",
-  });
+  const [user, setUser] = useState(null);
+  // const [user, setUser] = useState({
+  //   id: 1,
+  //   username: "Martibo",
+  //   email: "martibo@gmail.com",
+  // });
 
   return (
     <nav id="navbar" className="navbar navbar-expand-md navbar-dark">
@@ -41,11 +42,11 @@ const Navbar = () => {
             </NavLink>
             <NavLink
               exact
-              to="/apps/qr-code-generator"
+              to="/apps"
               className="nav-item nav-link"
               activeClassName="active"
             >
-              QRCode Generator
+              Apps
             </NavLink>
           </div>
           <div className="navbar-nav ml-auto user-login">

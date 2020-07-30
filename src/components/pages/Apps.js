@@ -3,7 +3,7 @@ import QrcodeCreator from "../../components/qrcode/QrcodeCreator";
 
 const Apps = () => {
   return (
-    <div className="container-md">
+    <div>
       <QrcodeCreator />
     </div>
   );

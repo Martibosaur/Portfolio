@@ -1,52 +1,29 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import { QRCode } from "react-qr-svg";
-import Moment from "moment";
+// import Moment from "moment";
 
+import QrcodeCreatorForm from "./QrcodeCreatorForm";
+import QrcodeImportModal from "./QrcodeImportModal";
+import QrcodeContext from "../../context/qrcode/qrcodeContext";
 import "./QrcodeCreator.scss";
 
 const Qrcode = () => {
-  const [qrCode, setQrCode] = useState({});
-  const [location, setLocation] = useState("n/a");
-
-  const onSubmit = (e) => {
-    e.preventDefault();
-    setQrCode({
-      date: Moment().format("MMMM Do YYYY, h:mm:ss a"),
-    });
-  };
-
+  const qrcodeContext = useContext(QrcodeContext);
+  const { qrcode } = qrcodeContext;
   return (
     <div>
       <div className="d-flex flex-column align-items-center">
         <h1>QRCode Generator</h1>
+        <QrcodeImportModal />
         <QRCode
           className="qrCodeCreated my-4"
           bgColor="#FFFFFF"
           fgColor="#000000"
           level="Q"
-          style={{ width: 300 }}
-          value={JSON.stringify(qrCode)}
+          style={{ width: 400 }}
+          value={JSON.stringify(qrcode)}
         />
-        <form className="col-md-6" onSubmit={onSubmit}>
-          <div className="form-group">
-            <label htmlFor="location">Location</label>
-            <input
-              className="form-control"
-              name="location"
-              type="text"
-              placeholder="Racking location (e.g. A02A05)"
-              onChange={(e) => {
-                setQrCode({
-                  ...qrCode,
-                  location: e.target.value.toUpperCase(),
-                });
-              }}
-            />
-          </div>
-          <button type="submit" className="btn btn-primary">
-            Download
-          </button>
-        </form>
+        <QrcodeCreatorForm />
       </div>
     </div>
   );
